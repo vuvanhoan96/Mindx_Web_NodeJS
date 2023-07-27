@@ -1,4 +1,4 @@
-const { sum, multiply } = require("./math.js")
+cconst { sum, multiply } = require("./math.js")
 
 const a = 3, b = 5;
 const result = sum(a, b);
