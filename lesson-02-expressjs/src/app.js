@@ -1,9 +1,11 @@
 import express from "express"
+import router from "./routes/index.js";
 
 const PORT = 8000;
 const app = express();
 
 app.use(express.json()); // middlewares
+
 /*
     Đây là 3 cách truyền dữ liệu của người dùng gửi tới Server nhận được: 
 
@@ -11,7 +13,7 @@ app.use(express.json()); // middlewares
         req.query
         req.body
 
-*/
+
 
 // req.params
 
@@ -35,7 +37,12 @@ app.post("/auth/signin", (req, res) => {
 
 app.get("/products", (req, res) => {
     console.log(req.query);
-})
+});
+
+*/
+
+app.use("/api", router);
+
 app.listen(PORT, () => {
     console.log("Server is running at PORT: 8000");
 })
